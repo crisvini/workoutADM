@@ -1,0 +1,16 @@
+Workout ADM
+
+Tela de metas {
+	- Criar novas metas;
+	- Deletar metas;
+}
+
+Tela de treinos {
+	- Criar novos exercícios e atribuir a ficha existente;
+	- Editar exercícios;
+	- Deletar exercícios;
+}
+
+Tela de usuários {
+	- Visualizar todos os usuários; 	
+}

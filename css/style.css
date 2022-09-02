@@ -114,3 +114,11 @@ p {
     position: absolute;
     top: calc(100vh + 3rem);
 }
+
+.alerta-label {
+    color: red !important;
+}
+
+.alerta-input {
+    border: 2px solid red !important;
+}

@@ -27,26 +27,26 @@ include("./class/Componentes.php");
                         <div class="row mx-1 my-2">
                             <div class="col-4">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control fw-normal fs-5 bg-gray border-black color-white" placeholder="Nome">
-                                    <label class="color-white fw-semibold">Nome</label>
+                                    <input type="text" class="form-control fw-normal fs-5 bg-gray border-black color-white" placeholder="Nome" id="nome">
+                                    <label class="color-white fw-semibold" id="labelNome">Nome</label>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control fw-normal fs-5 bg-gray border-black color-white" placeholder="Descrição">
-                                    <label class="color-white fw-semibold">Descrição</label>
+                                    <input type="text" class="form-control fw-normal fs-5 bg-gray border-black color-white" placeholder="Descrição" id="descricao">
+                                    <label class="color-white fw-semibold" id="labelDescricao">Descrição</label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control fw-normal fs-5 bg-gray border-black color-white" placeholder="Repetições">
-                                    <label class="color-white fw-semibold">Repetições</label>
+                                    <input type="number" class="form-control fw-normal fs-5 bg-gray border-black color-white" placeholder="Repetições" id="repeticoes">
+                                    <label class="color-white fw-semibold" id="labelRepeticoes">Repetições</label>
                                 </div>
                             </div>
                         </div>
                         <div class="row mx-1 mb-2 mt-4">
                             <div class="col-3 ms-auto">
-                                <button type="button" class="btn w-100 h-100 btn-pink fs-6">Incluir</button>
+                                <button type="button" class="btn w-100 h-100 btn-pink fs-6" id="btn_incluir">Incluir</button>
                             </div>
                         </div>
                     </div>
@@ -132,6 +132,51 @@ include("./class/Componentes.php");
             </div>
         </div>
     </main>
+
+    <script>
+        document.getElementById("btn_incluir").addEventListener('click', () => {
+            var formData = new FormData();
+            formData.set('nome', document.querySelector("#nome").value);
+            formData.set('descricao', document.querySelector("#descricao").value);
+            formData.set('repeticoes', document.querySelector("#repeticoes").value);
+
+            fetch('./ajax/incluiMeta.php', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text()).then(function(text) {
+                if (text == 1) {
+                    limpaCampos(["#nome", "#descricao", "#repeticoes"]);
+                    Swal.fire({
+                        title: "Meta incluída com sucesso!",
+                        icon: "success",
+                        confirmButtonText: "Ok",
+                        background: "#191919",
+                        customClass: {
+                            confirmButton: "btn-pink",
+                            title: "color-white",
+                        },
+                    });
+                } else {
+                    limpaCampos(["#nome", "#descricao", "#repeticoes"]);
+                    alertaPreenchimento([
+                        ["#nome", "#labelNome"],
+                        ["#descricao", "#labelDescricao"],
+                        ["#repeticoes", "#labelRepeticoes"]
+                    ]);
+                    Swal.fire({
+                        title: "Preencha os dados corretamente!",
+                        icon: "warning",
+                        confirmButtonText: "Ok",
+                        background: "#191919",
+                        customClass: {
+                            confirmButton: "btn-pink",
+                            title: "color-white",
+                        },
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 

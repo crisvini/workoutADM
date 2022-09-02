@@ -18,12 +18,20 @@ function logout() {
   });
 }
 
-function alertaPreenchimento(idCampo, idLabel) {
-  if ($(idCampo).val() == "") {
-    $(idLabel).addClass("alerta-label");
-    $(idCampo).addClass("alerta-input");
-  } else {
-    $(idLabel).removeClass("alerta-label");
-    $(idCampo).removeClass("alerta-input");
+function alertaPreenchimento(idCampos) {
+  for (var i = 0; i < idCampos.length; i++) {
+    if ($(idCampos[i][0]).val() == "") {
+      document.querySelector(idCampos[i][0]).classList.add("alerta-input");
+      document.querySelector(idCampos[i][1]).classList.add("alerta-label");
+    } else {
+      document.querySelector(idCampos[i][0]).classList.remove("alerta-input");
+      document.querySelector(idCampos[i][1]).classList.remove("alerta-label");
+    }
+  }
+}
+
+function limpaCampos(idCampos) {
+  for (var i = 0; i < idCampos.length; i++) {
+    document.querySelector(idCampos[i]).value = "";
   }
 }

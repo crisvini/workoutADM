@@ -89,7 +89,7 @@ include("./class/Componentes.php");
                                 <p class="fs-5 color-white fw-normal">30/08/2022</p>
                             </div>
                             <div class="col-1 text-center align-self-end">
-                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover" style="cursor: pointer;"></i>
+                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover cursor-pointer"></i>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ include("./class/Componentes.php");
                                 <p class="fs-5 color-white fw-normal">30/08/2022</p>
                             </div>
                             <div class="col-1 text-center align-self-end">
-                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover" style="cursor: pointer;"></i>
+                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover cursor-pointer"></i>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ include("./class/Componentes.php");
                                 <p class="fs-5 color-white fw-normal">30/08/2022</p>
                             </div>
                             <div class="col-1 text-center align-self-end">
-                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover" style="cursor: pointer;"></i>
+                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover cursor-pointer"></i>
                             </div>
                         </div>
                     </div>

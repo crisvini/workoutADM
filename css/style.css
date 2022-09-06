@@ -83,7 +83,7 @@ p {
 }
 
 .btn-pink {
-    height: calc(3rem + 2px) !important;
+    /* height: calc(3rem + 2px) !important; */
     background-color: #e30b5c !important;
     color: #fff7f8 !important;
     outline: none !important;
@@ -121,4 +121,8 @@ p {
 
 .alerta-input {
     border: 2px solid red !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
 }

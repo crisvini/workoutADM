@@ -11,8 +11,9 @@ class Componentes
               <!-- JS -->
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
               <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+              <script src="./js/lib/jquery.mask.js?' . time() . '"></script>
               <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-              <script src="./js/functions.js"></script>
+              <script src="./js/functions.js?' . time() . '"></script>
               <!-- CSS -->
               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
               <link rel="stylesheet" href="./css/style.css?' . time() . '">
@@ -36,7 +37,7 @@ class Componentes
         $activeClass4 = '';
         if ($activePage == 'index.php') $activeClass1 = 'active-menu';
         else if ($activePage == 'metas.php') $activeClass2 = 'active-menu';
-        else if ($activePage == 'treinos.php') $activeClass3 = 'active-menu';
+        else if ($activePage == 'exercicios.php') $activeClass3 = 'active-menu';
         else if ($activePage == 'usuarios.php') $activeClass4 = 'active-menu';
         echo '  <header class="bg-gray sticky-top">
                     <nav class="container navbar navbar-expand-lg bg-gray">
@@ -55,13 +56,13 @@ class Componentes
                                         <a class="nav-link color-pink fw-semibold ' . $activeClass2 . '" href="./metas.php">Metas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link color-pink fw-semibold ' . $activeClass3 . '" href="./treinos.php">Treinos</a>
+                                        <a class="nav-link color-pink fw-semibold ' . $activeClass3 . '" href="./exercicios.php">Exercícios</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link color-pink fw-semibold ' . $activeClass4 . '" href="./usuarios.php">Usuários</a>
                                     </li>
                                 </ul>
-                                <span class="color-pink fw-semibold pink-hover" style="cursor: pointer;" onclick="logout();">Sair&nbsp;<i class="fa-solid fa-right-from-bracket"></i></span>
+                                <span class="color-pink fw-semibold pink-hover cursor-pointer" onclick="logout();">Sair&nbsp;<i class="fa-solid fa-right-from-bracket"></i></span>
                             </div>
                         </div>
                     </nav>

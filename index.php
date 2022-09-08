@@ -20,7 +20,7 @@ $_SESSION = [];
                 <label class="color-white fw-semibold" id="labelEmail">E-mail</label>
             </div>
             <div class="form-floating w-100 mt-2 text-start">
-                <input type="password" class="form-control fw-normal br-10 fs-6 bg-medium-gray border-black color-white" name="senha" placeholder="Senha" maxlength="8" id="senha">
+                <input type="password" class="form-control fw-normal br-10 fs-6 bg-medium-gray border-black color-white" name="senha" placeholder="Senha" id="senha">
                 <label class="color-white fw-semibold" id="labelSenha">Senha</label>
             </div>
             <div class="w-100 mt-4">

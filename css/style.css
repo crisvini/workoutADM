@@ -92,7 +92,7 @@ p {
 }
 
 .btn-gray {
-    height: calc(3rem + 2px) !important;
+    /* height: calc(3rem + 2px) !important; */
     background-color: #a59b9c !important;
     color: #191919 !important;
     outline: none !important;
@@ -125,4 +125,8 @@ p {
 
 .cursor-pointer {
     cursor: pointer !important;
+}
+
+div a img {
+    display: none;
 }

@@ -35,10 +35,12 @@ class Componentes
         $activeClass2 = '';
         $activeClass3 = '';
         $activeClass4 = '';
+        $activeClass5 = '';
         if ($activePage == 'index.php') $activeClass1 = 'active-menu';
         else if ($activePage == 'metas.php') $activeClass2 = 'active-menu';
-        else if ($activePage == 'exercicios.php') $activeClass3 = 'active-menu';
-        else if ($activePage == 'usuarios.php') $activeClass4 = 'active-menu';
+        else if ($activePage == 'objetivos.php') $activeClass3 = 'active-menu';
+        else if ($activePage == 'fichas.php') $activeClass4 = 'active-menu';
+        else if ($activePage == 'exercicios.php') $activeClass5 = 'active-menu';
         echo '  <header class="bg-gray sticky-top">
                     <nav class="container navbar navbar-expand-lg bg-gray">
                         <div class="container-fluid">
@@ -56,10 +58,13 @@ class Componentes
                                         <a class="nav-link color-pink fw-semibold ' . $activeClass2 . '" href="./metas.php">Metas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link color-pink fw-semibold ' . $activeClass3 . '" href="./exercicios.php">Exercícios</a>
+                                        <a class="nav-link color-pink fw-semibold ' . $activeClass3 . '" href="./objetivos.php">Objetivos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link color-pink fw-semibold ' . $activeClass4 . '" href="./usuarios.php">Usuários</a>
+                                        <a class="nav-link color-pink fw-semibold ' . $activeClass4 . '" href="./fichas.php">Fichas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link color-pink fw-semibold ' . $activeClass5 . '" href="./exercicios.php">Exercícios</a>
                                     </li>
                                 </ul>
                                 <span class="color-pink fw-semibold pink-hover cursor-pointer" onclick="logout();">Sair&nbsp;<i class="fa-solid fa-right-from-bracket"></i></span>

@@ -2,7 +2,7 @@
 error_reporting(E_ERROR | E_PARSE);
 session_start();
 
-include("../mysql/conexao.php");
+include("../../mysql/conexao.php");
 
 $autenticado = false;
 
@@ -27,5 +27,7 @@ if (mysqli_fetch_assoc(mysqli_query($mysqli, $sql))["email"] != null) {
     $_SESSION["nome"] = mysqli_fetch_assoc(mysqli_query($mysqli, $sql))["nome"];
     $_SESSION["cpf"] = mysqli_fetch_assoc(mysqli_query($mysqli, $sql))["cpf"];
 }
+
+$mysqli->close();
 
 echo $autenticado;

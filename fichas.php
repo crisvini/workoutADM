@@ -5,18 +5,18 @@ include("./class/Componentes.php");
 <!DOCTYPE html>
 <html lang="en">
 
-<?php Componentes::head("Exercícios"); ?>
+<?php Componentes::head("Fichas"); ?>
 
 <body class="bg-black">
 
-    <?php Componentes::header("exercicios.php"); ?>
+    <?php Componentes::header("fichas.php"); ?>
 
     <main class="mb-5">
         <div class="container mt-4 bg-gray p-4 br-10">
             <div class="row">
                 <div class="col-12">
                     <div class="w-100 br-10">
-                        <p class="fs-3 color-pink fw-semibold">Incluir novo exercício&nbsp;<i class="fa-solid fa-plus"></i>
+                        <p class="fs-3 color-pink fw-semibold">Criar novo objetivo&nbsp;<i class="fa-solid fa-plus"></i>
                         </p>
                     </div>
                 </div>

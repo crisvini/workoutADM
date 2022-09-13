@@ -83,7 +83,7 @@ p {
 }
 
 .btn-pink {
-    /* height: calc(3rem + 2px) !important; */
+    height: calc(3.5rem + 2px) !important;
     background-color: #e30b5c !important;
     color: #fff7f8 !important;
     outline: none !important;
@@ -92,7 +92,7 @@ p {
 }
 
 .btn-gray {
-    /* height: calc(3rem + 2px) !important; */
+    height: calc(3.5rem + 2px) !important;
     background-color: #a59b9c !important;
     color: #191919 !important;
     outline: none !important;

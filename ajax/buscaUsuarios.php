@@ -2,7 +2,7 @@
 error_reporting(E_ERROR | E_PARSE);
 session_start();
 
-include("../mysql/conexao.php");
+include("../../mysql/conexao.php");
 
 // Busca o nome e o cpf no banco de dados
 if (isset($_POST["nome"]) && isset($_POST["cpf"])) {

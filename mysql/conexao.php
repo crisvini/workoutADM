@@ -11,7 +11,7 @@
 //     echo "Falha ao conectar: (" . $mysqli->connect_errno . ") " .  $mysqli->connect_error;
 
 $server = "localhost";
-$user = "id19538403_root";
+$user = "workou68_admin";
 $password = "15C25v35l45l$";
 $database = "id19538403_workout";
 

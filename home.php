@@ -3,7 +3,7 @@ include("./class/Componentes.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <?php Componentes::head("Home"); ?>
 
@@ -17,7 +17,27 @@ include("./class/Componentes.php");
                 <div class="col-6">
                     <div class="bg-gray w-100 br-10 p-2 cursor-pointer" onclick="window.location.href='./metas.php';">
                         <div class="d-flex justify-content-between align-items-center mx-2">
-                            <p class="fs-5 color-white fw-semibold">Metas&nbsp;<i class="fa-solid fa-list-check"></i>
+                            <p class="fs-5 color-white fw-semibold">Metas&nbsp;
+                            </p>
+                            <i class="fs-5 color-pink fw-semibold fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="bg-gray w-100 br-10 p-2 cursor-pointer" onclick="window.location.href='./objetivos.php';">
+                        <div class="d-flex justify-content-between align-items-center mx-2">
+                            <p class="fs-5 color-white fw-semibold">Objetivos&nbsp;
+                            </p>
+                            <i class="fs-5 color-pink fw-semibold fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="bg-gray w-100 br-10 p-2 cursor-pointer" onclick="window.location.href='./fichas.php';">
+                        <div class="d-flex justify-content-between align-items-center mx-2">
+                            <p class="fs-5 color-white fw-semibold">Fichas&nbsp;
                             </p>
                             <i class="fs-5 color-pink fw-semibold fa-solid fa-chevron-right"></i>
                         </div>
@@ -26,28 +46,8 @@ include("./class/Componentes.php");
                 <div class="col-6">
                     <div class="bg-gray w-100 br-10 p-2 cursor-pointer" onclick="window.location.href='./exercicios.php';">
                         <div class="d-flex justify-content-between align-items-center mx-2">
-                            <p class="fs-5 color-white fw-semibold">Exercícios&nbsp;<i class="fa-solid fa-dumbbell"></i>
+                            <p class="fs-5 color-white fw-semibold">Exercícios&nbsp;
                             </p>
-                            <i class="fs-5 color-pink fw-semibold fa-solid fa-chevron-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="row mt-4">
-                <div class="col-12">
-                    <div class="bg-gray w-100 br-10 p-2 cursor-pointer" onclick="window.location.href='./usuarios.php';">
-                        <div class="d-flex justify-content-between align-items-center mx-2">
-                            <p class="fs-5 color-white fw-semibold">Usuários&nbsp;<i class="fa-solid fa-user"></i></p>
-                            <i class="fs-5 color-pink fw-semibold fa-solid fa-chevron-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="bg-gray w-100 br-10 p-2 cursor-pointer" onclick="window.location.href='./objetivos.php';">
-                        <div class="d-flex justify-content-between align-items-center mx-2">
-                            <p class="fs-5 color-white fw-semibold">Objetivos</p>
                             <i class="fs-5 color-pink fw-semibold fa-solid fa-chevron-right"></i>
                         </div>
                     </div>

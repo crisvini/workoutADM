@@ -5,7 +5,7 @@ $_SESSION = [];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <?php Componentes::head("Login"); ?>
 

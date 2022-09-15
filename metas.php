@@ -1,9 +1,52 @@
 <?php
 include("./class/Componentes.php");
+include("../mysql/conexao.php");
+session_start();
+
+// Busca as metas ativas
+$sql = "SELECT
+            nome,
+            descricao,
+            pontos,
+            quantidade,
+            id_metas
+        FROM 
+            metas
+        WHERE
+            ativo = 'true'";
+$result = $mysqli->query($sql);
+
+// Monta as linhas das metas
+$htmlLinhasMetas = '';
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $htmlLinhasMetas .= '<div class="row mt-3" id="meta_' . $row['id_metas'] . '">
+                                <div class="col-12">
+                                    <div class="bg-medium-gray w-100 br-10 p-2">
+                                        <div class="row mx-1">
+                                            <div class="col-6">
+                                                <p class="fs-6 color-white fw-normal">' . $row['descricao'] . '</p>
+                                            </div>
+                                            <div class="col-2 text-start">
+                                                <p class="fs-6 color-white fw-normal">' . $row['pontos'] . '</p>
+                                            </div>
+                                            <div class="col-2 text-start">
+                                                <p class="fs-6 color-white fw-normal">' . $row['quantidade'] . '</p>
+                                            </div>
+                                            <div class="col-2 text-center align-self-end">
+                                                <i class="fs-6 color-pink fw-semibold fa-solid fa-trash-can pink-hover cursor-pointer" onclick="deletaMeta(' . $row['id_metas'] . ')"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>';
+    }
+}
+$mysqli->close();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <?php Componentes::head("Metas"); ?>
 
@@ -25,16 +68,16 @@ include("./class/Componentes.php");
                 <div class="col-12">
                     <div class="bg-black w-100 br-10 p-2">
                         <div class="row mx-1 my-2">
-                            <div class="col-4">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control fw-normal fs-5 bg-medium-gray border-black color-white" placeholder="Nome" id="nome">
-                                    <label class="color-white fw-semibold" id="labelNome">Nome</label>
-                                </div>
-                            </div>
                             <div class="col-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control fw-normal fs-5 bg-medium-gray border-black color-white" placeholder="Descrição" id="descricao">
                                     <label class="color-white fw-semibold" id="labelDescricao">Descrição</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control fw-normal fs-5 bg-medium-gray border-black color-white" placeholder="Pontos" id="pontos">
+                                    <label class="color-white fw-semibold" id="labelPontos">Pontos</label>
                                 </div>
                             </div>
                             <div class="col-2">
@@ -65,71 +108,23 @@ include("./class/Componentes.php");
                 <div class="col-12">
                     <div class="bg-black w-100 br-10 p-2">
                         <div class="row mx-1">
-                            <div class="col-8">
-                                <p class="fs-5 color-white fw-semibold">Exercício</p>
+                            <div class="col-6">
+                                <p class="fs-6 color-white fw-semibold">Nome</p>
                             </div>
-                            <div class="col-3 text-start">
-                                <p class="fs-5 color-white fw-semibold">Data de criação</p>
+                            <div class="col-2 text-start">
+                                <p class="fs-6 color-white fw-semibold">Pontos</p>
                             </div>
-                            <div class="col-1 text-center align-self-end">
-                                <p class="fs-5 color-white fw-semibold">Deletar</p>
+                            <div class="col-2 text-start">
+                                <p class="fs-6 color-white fw-semibold">Repetições</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-12">
-                    <div class="bg-medium-gray w-100 br-10 p-2">
-                        <div class="row mx-1">
-                            <div class="col-8">
-                                <p class="fs-5 color-white fw-normal">Faça 500 repetições de supino reto (barra)</p>
-                            </div>
-                            <div class="col-3 text-start">
-                                <p class="fs-5 color-white fw-normal">30/08/2022</p>
-                            </div>
-                            <div class="col-1 text-center align-self-end">
-                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover cursor-pointer"></i>
+                            <div class="col-2 text-center align-self-end">
+                                <p class="fs-6 color-white fw-semibold">Deletar</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-12">
-                    <div class="bg-medium-gray w-100 br-10 p-2">
-                        <div class="row mx-1">
-                            <div class="col-8">
-                                <p class="fs-5 color-white fw-normal">Faça 500 repetições de desenvolvimento lateral
-                                    (halter)</p>
-                            </div>
-                            <div class="col-3 text-start">
-                                <p class="fs-5 color-white fw-normal">30/08/2022</p>
-                            </div>
-                            <div class="col-1 text-center align-self-end">
-                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover cursor-pointer"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-12">
-                    <div class="bg-medium-gray w-100 br-10 p-2">
-                        <div class="row mx-1">
-                            <div class="col-8">
-                                <p class="fs-5 color-white fw-normal">Faça 500 repetições de biceps martelo (halter)</p>
-                            </div>
-                            <div class="col-3 text-start">
-                                <p class="fs-5 color-white fw-normal">30/08/2022</p>
-                            </div>
-                            <div class="col-1 text-center align-self-end">
-                                <i class="fs-5 color-pink fw-semibold fa-solid fa-trash-can pink-hover cursor-pointer"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?= $htmlLinhasMetas; ?>
         </div>
     </main>
 

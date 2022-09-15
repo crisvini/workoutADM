@@ -3,7 +3,7 @@ include("./class/Componentes.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <?php Componentes::head("Treinos"); ?>
 
